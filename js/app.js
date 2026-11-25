@@ -25,7 +25,7 @@
         <a href="mailto:${esc(S.email)}">Email</a>
         <a href="${esc(S.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>
         <a href="${esc(S.itch)}" target="_blank" rel="noopener">itch.io</a>
-        <a href="${esc(S.resumePdf)}" target="_blank" rel="noopener">Résumé</a>
+        <a href="${esc(S.resumePdf)}" target="_blank" rel="noopener">Resume</a>
       </nav>
     </footer>`;
 
@@ -118,7 +118,7 @@
                 <p class="me-hello reveal">${esc(S.about.hello)}</p>
                 <ul class="me-roles">${S.roles.map((r, i) => `<li class="reveal" style="--d:${.12 * (i + 1)}s"><a href="${routes[i]}">${esc(r)}</a></li>`).join("")}</ul>
                 <div class="btn-row reveal" style="--d:.5s">
-                  <a class="btn solid" href="${esc(S.resumePdf)}" target="_blank" rel="noopener">${I.dl} Download résumé</a>
+                  <a class="btn solid" href="${esc(S.resumePdf)}" target="_blank" rel="noopener">${I.dl} Download resume</a>
                   <a class="btn" href="mailto:${esc(S.email)}">${I.mail} Say hello</a>
                 </div>
               </div>
@@ -161,7 +161,7 @@
 
             <section class="resume" id="resume">
               <div class="resume-head reveal">
-                <div><span class="eyebrow">Résumé${R.headline ? " · " + esc(R.headline) : ""}</span><h2 class="h2">Experience &amp; education</h2></div>
+                <div><span class="eyebrow">Resume${R.headline ? " · " + esc(R.headline) : ""}</span><h2 class="h2">Experience &amp; education</h2></div>
                 <a class="btn" href="${esc(S.resumePdf)}" target="_blank" rel="noopener">${I.dl} PDF</a>
               </div>
               <div class="resume-grid">
@@ -202,7 +202,7 @@
         html: `
         <div class="view page">
           <div class="wrap">
-            <header class="world-head"><span class="eyebrow reveal">Planet 02</span><h1 class="display reveal">Games</h1>
+            <header class="world-head"><h1 class="display reveal">Games</h1>
               <p class="lede reveal">Printed puzzle books, mobile claw machines and flashlight-lit caves — art direction, illustration and character work for games made with brilliant teams.</p></header>
             <div class="game-row">
               ${S.games.map((g, i) => `
@@ -227,7 +227,7 @@
         html: `
         <div class="view page">
           <div class="wrap">
-            <header class="world-head"><span class="eyebrow reveal">Planet 03</span><h1 class="display reveal">Graphics</h1>
+            <header class="world-head"><h1 class="display reveal">Graphics</h1>
               <p class="lede reveal">Books, brands, campaigns and type experiments — each one a small world held up to the light.</p></header>
             <div class="sun-system reveal" aria-label="Graphics projects">
               <div class="gold-planet" aria-hidden="true">
@@ -265,7 +265,7 @@
         html: `
         <div class="view page">
           <div class="wrap">
-            <header class="world-head"><span class="eyebrow reveal">Planet 04</span><h1 class="display reveal">${esc(A.title)}</h1>
+            <header class="world-head"><h1 class="display reveal">${esc(A.title)}</h1>
               <p class="lede reveal">${esc(A.summary)}</p></header>
             ${(A.sections || []).map(sec => sec.type === "gallery" ? gallery(sec.items, 2, "art-gallery") : sections([sec])).join("")}
           </div>
