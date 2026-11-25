@@ -34,7 +34,16 @@ Open Terminal in the `site` folder and run `python3 -m http.server 8000`, then v
 
 The same `flipbook`, `gallery` and `text` blocks work on any project, games included.
 
-## Publish to helenyao.com
-The simplest option is **Netlify Drop**: go to app.netlify.com/drop and drag the whole `site` folder onto the page. Then go to Site settings → Domain management → add `helenyao.com`, and update your domain's DNS records as Netlify instructs (where the domain is registered, which may be through Canva).
-Other options: GitHub Pages, Vercel or Cloudflare Pages. Upload the `site` folder as-is; no build command is needed.
-To update the site later, drag the folder onto Netlify again (Deploys → drag & drop).
+## How helenyao.com is hosted
+- **Host:** GitHub Pages, from the public repository `helenyao04/helenyao.com` (branch `main`). Free, no badge, HTTPS enforced.
+- **Domain:** registered through Canva (auto-renews each January — keep it on). Canva DNS records: four `A @` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `CNAME www` → `helenyao04.github.io`. "Connected to Canva" is off.
+- The `CNAME` file in this folder tells GitHub Pages to serve the site at helenyao.com — don't delete it.
+
+## Updating the live site
+After editing files here, publish with (from this `site` folder):
+
+```
+git add -A && git commit -m "Update portfolio" && git push
+```
+
+The site updates within about a minute. You can also edit or upload files directly on github.com in the `helenyao.com` repository, or just ask Claude to publish.
